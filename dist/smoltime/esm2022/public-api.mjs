@@ -1,0 +1,5 @@
+/*
+ * Public API Surface of smoltime
+ */
+export * from './lib/smoltime.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3Ntb2x0aW1lL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyx1QkFBdUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygc21vbHRpbWVcbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL2xpYi9zbW9sdGltZS5tb2R1bGUnO1xuIl19
