@@ -8,8 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prestorybook": "mkdir -p node_modules/.cache/storybook",
-    "storybook": "ng run smoltime:storybook",
-    "build-storybook": "ng run smoltime:build-storybook"
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "private": true,
   "dependencies": {
