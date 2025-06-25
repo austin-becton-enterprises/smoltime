@@ -1,8 +1,7 @@
-import * as i0 from '@angular/core';
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-class SmoltimeComponent {
+import * as i0 from "@angular/core";
+export class SmoltimeComponent {
     constructor() {
         this.title = 'Smoltime Component';
         this.description = 'A simple time management component';
@@ -31,14 +30,4 @@ class SmoltimeComponent {
             type: Input
         }] }); })();
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassDebugInfo(SmoltimeComponent, { className: "SmoltimeComponent" }); })();
-
-/*
- * Public API Surface of smoltime
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-export { SmoltimeComponent };
-//# sourceMappingURL=smoltime.mjs.map
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21vbHRpbWUuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvc21vbHRpbWUvc3JjL2xpYi9jb21wb25lbnRzL3Ntb2x0aW1lL3Ntb2x0aW1lLmNvbXBvbmVudC50cyIsIi4uLy4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL3Ntb2x0aW1lL3NyYy9saWIvY29tcG9uZW50cy9zbW9sdGltZS9zbW9sdGltZS5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUNqRCxPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0saUJBQWlCLENBQUM7O0FBUy9DLE1BQU0sT0FBTyxpQkFBaUI7SUFQOUI7UUFRVyxVQUFLLEdBQUcsb0JBQW9CLENBQUM7UUFDN0IsZ0JBQVcsR0FBRyxvQ0FBb0MsQ0FBQztLQUM3RDtrSEFIWSxpQkFBaUI7b0VBQWpCLGlCQUFpQjtZQ1Q1QixBQURGLDhCQUFnQyxTQUMxQjtZQUFBLFlBQVc7WUFBQSxpQkFBSztZQUNwQix5QkFBRztZQUFBLFlBQWlCO1lBQ3RCLEFBRHNCLGlCQUFJLEVBQ3BCOztZQUZBLGVBQVc7WUFBWCwrQkFBVztZQUNaLGVBQWlCO1lBQWpCLHFDQUFpQjs0QkRJVixZQUFZOztpRkFJWCxpQkFBaUI7Y0FQN0IsU0FBUzsyQkFDRSxjQUFjLGNBQ1osSUFBSSxXQUNQLENBQUMsWUFBWSxDQUFDO2dCQUtkLEtBQUs7a0JBQWIsS0FBSztZQUNHLFdBQVc7a0JBQW5CLEtBQUs7O2tGQUZLLGlCQUFpQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IENvbW1vbk1vZHVsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvbW1vbic7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2xpYi1zbW9sdGltZScsXG4gIHN0YW5kYWxvbmU6IHRydWUsXG4gIGltcG9ydHM6IFtDb21tb25Nb2R1bGVdLFxuICB0ZW1wbGF0ZVVybDogJy4vc21vbHRpbWUuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9zbW9sdGltZS5jb21wb25lbnQuc2NzcyddXG59KVxuZXhwb3J0IGNsYXNzIFNtb2x0aW1lQ29tcG9uZW50IHtcbiAgQElucHV0KCkgdGl0bGUgPSAnU21vbHRpbWUgQ29tcG9uZW50JztcbiAgQElucHV0KCkgZGVzY3JpcHRpb24gPSAnQSBzaW1wbGUgdGltZSBtYW5hZ2VtZW50IGNvbXBvbmVudCc7XG59XG4iLCI8ZGl2IGNsYXNzPVwic21vbHRpbWUtY29udGFpbmVyXCI+XG4gIDxoMj57eyB0aXRsZSB9fTwvaDI+XG4gIDxwPnt7IGRlc2NyaXB0aW9uIH19PC9wPlxuPC9kaXY+XG4iXX0=

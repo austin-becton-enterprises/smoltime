@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { SmoltimeComponent } from './components/smoltime/smoltime.component';
 
 @NgModule({
-  declarations: [
+  imports: [
     SmoltimeComponent
   ],
-  imports: [],
   exports: [
     SmoltimeComponent
   ]
