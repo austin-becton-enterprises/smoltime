@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "smoltime": [
+        "../../dist/smoltime",
+        "../../projects/smoltime/src/public-api.ts"
+      ]
+    }
+  }
+}
