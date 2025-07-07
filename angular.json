@@ -96,10 +96,6 @@
             "tsConfig": "projects/component-viewer/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/component-viewer/public"
-              }
             ],
             "styles": [
               "projects/component-viewer/src/styles.scss"
