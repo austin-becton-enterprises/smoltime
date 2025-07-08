@@ -5,30 +5,16 @@
       <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
       <button (click)="nextMonth()">&gt;</button>
     </div>
-    <div class="calendar-days">
-      <div *ngFor="let day of dayNames" class="day-name">{{ day }}</div>
-      <div *ngFor="let blank of blanks" class="day blank"></div>
-      <div *ngFor="let date of daysInMonth" class="day"
-      [class.selected]="selectedDates.has(date)"
-
-      (click)="toggleDateSelection(date)">
-      {{ date }}
+      <div class="calendar-days">
+        <div *ngFor="let day of dayNames" class="day-name">{{ day }}</div>
+        <div *ngFor="let blank of blanks" class="day blank"></div>
+          <div *ngFor="let date of daysInMonth" class="day"
+            [class.selected]="selectedDates.has(date)"
+            (click)="toggleDateSelection(date)">
+            {{ date }}
+          </div>
       </div>
-    </div>
-    </div>
   </div>
-
-  <div class="time-selectors">
-  <label>Start Time:
-    <select [(ngModel)]="selectedStartTime">
-      <option *ngFor="let time of timeSlots" [value]="time">{{ time }}</option>
-    </select>
-  </label>
-
-  <label>End Time:
-    <select [(ngModel)]="selectedEndTime">
-      <option *ngFor="let time of timeSlots" [value]="time">{{ time }}</option>
-    </select>
-  </label>
 </div>
+
 
