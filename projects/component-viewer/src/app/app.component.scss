@@ -41,3 +41,30 @@
 .blank {
   background: transparent;
 }
+
+.day.selected {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.time-selectors {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-size: 0.9rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  select {
+    padding: 0.3rem;
+    margin-top: 0.2rem;
+  }
+}
+

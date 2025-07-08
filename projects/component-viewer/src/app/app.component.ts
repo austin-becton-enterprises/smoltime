@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SmoltimeComponent } from 'smoltime';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SmoltimeComponent],
+  imports: [CommonModule, SmoltimeComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -48,4 +49,26 @@ export class AppComponent {
       this.currentMonth--;
     }
   }
+
+  selectedDates = new Set<number>();
+
+  toggleDateSelection(day: number) {
+    if (this.selectedDates.has(day)) {
+      this.selectedDates.delete(day);
+    } else {
+      this.selectedDates.add(day);
+    }
+  }
+
+  timeSlots = [
+  '08:00 AM', '09:00 AM', '10:00 AM',
+  '11:00 AM', '12:00 PM', '01:00 PM',
+  '02:00 PM', '03:00 PM', '04:00 PM',
+  '05:00 PM'
+  ];
+
+  selectedStartTime = '';
+  selectedEndTime = '';
+
+
 }
