@@ -1,9 +1,18 @@
-<div class="smoltime-container">
-  <h2>{{ title }}</h2>
-  <p>{{ description }}</p>
-</div>
-<div class="outer_shell">
-  
-  <p style="padding: 1rem;">This is a rectangle container!</p>
-</div>
-<div style="width: 100px; height: 100px; background-color: red;">Test</div>
+  <div class="calendar">
+    <div class="calendar-header">
+      <button (click)="prevMonth()">&lt;</button>
+      <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+      <button (click)="nextMonth()">&gt;</button>
+    </div>
+    <div class="calendar-days">
+      <div *ngFor="let day of dayNames" class="day-name">{{ day }}</div>
+      <div *ngFor="let blank of blanks" class="day blank"></div>
+      <div *ngFor="let date of daysInMonth"
+           class="day"
+           [class.selected]="selectedDates.has(date)"
+           (click)="toggleDateSelection(date)">
+        {{ date }}
+      </div>
+    </div>
+  </div>
+
