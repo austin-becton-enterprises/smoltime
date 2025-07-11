@@ -1,18 +1,112 @@
+<div class="smoltime-container">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  
   <div class="calendar">
     <div class="calendar-header">
-      <button (click)="prevMonth()">&lt;</button>
-      <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
-      <button (click)="nextMonth()">&gt;</button>
+      <button class="nav-button" (click)="previousMonth()">&lt;</button>
+      <h3 class="month-title">{{ currentMonth }}</h3>
+      <button class="nav-button" (click)="nextMonth()">&gt;</button>
     </div>
-    <div class="calendar-days">
-      <div *ngFor="let day of dayNames" class="day-name">{{ day }}</div>
-      <div *ngFor="let blank of blanks" class="day blank"></div>
-      <div *ngFor="let date of daysInMonth"
-           class="day"
-           [class.selected]="selectedDates.has(date)"
-           (click)="toggleDateSelection(date)">
-        {{ date }}
+    
+    <div class="calendar-grid">
+      <div class="weekday-header" *ngFor="let day of weekDays">{{ day }}</div>
+      
+      <div 
+        *ngFor="let day of calendarDays" 
+        class="calendar-day"
+        [class.today]="isToday(day)"
+        [class.selected]="isSelected(day)"
+        [class.empty]="!day"
+        [class.has-appointments]="hasAppointments(day)"
+        [class.past-date]="isPastDate(day)"
+        (click)="selectDate(day)"
+      >
+        {{ day }}
+        <div *ngIf="hasAppointments(day)" class="appointment-indicator"></div>
       </div>
     </div>
   </div>
-
+  
+  <!-- Booking Modal -->
+  <div *ngIf="showBookingModal" class="modal-overlay" (click)="closeBookingModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Book Appointment</h3>
+        <button class="close-button" (click)="closeBookingModal()">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <p class="selected-date">{{ selectedDateString }}</p>
+        
+        <form (ngSubmit)="bookAppointment()" #bookingFormRef="ngForm">
+          <div class="form-group">
+            <label for="clientName">Name *</label>
+            <input 
+              type="text" 
+              id="clientName" 
+              [(ngModel)]="bookingForm.clientName" 
+              name="clientName"
+              required
+              placeholder="Enter your full name"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="clientEmail">Email *</label>
+            <input 
+              type="email" 
+              id="clientEmail" 
+              [(ngModel)]="bookingForm.clientEmail" 
+              name="clientEmail"
+              required
+              placeholder="Enter your email address"
+            >
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service *</label>
+            <select 
+              id="service" 
+              [(ngModel)]="bookingForm.service" 
+              name="service"
+              required
+            >
+              <option value="">Select a service</option>
+              <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="time">Time *</label>
+            <select 
+              id="time" 
+              [(ngModel)]="bookingForm.time" 
+              name="time"
+              required
+            >
+              <option value="">Select a time</option>
+              <option *ngFor="let time of getAvailableTimesForDate()" [value]="time">{{ time }}</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="notes">Notes (Optional)</label>
+            <textarea 
+              id="notes" 
+              [(ngModel)]="bookingForm.notes" 
+              name="notes"
+              rows="3"
+              placeholder="Any additional information..."
+            ></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" (click)="closeBookingModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Book Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
