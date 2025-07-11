@@ -87,8 +87,8 @@ $clickedColor: #4caf50;
   background-color: $hoverColor;
 }
 .confirm-btn:active {
-  background-color: $clickedColor;  /* darker gray when clicked */
-  transform: scale(0.98);     /* subtle shrink effect on click */
+  background-color: $clickedColor;  
+  transform: scale(0.98);    
 }
 .confirm-btn:focus-visible {
   outline: 3px solid lighten($clickedColor, 20%);
