@@ -1,3 +1,6 @@
+$normalColor: #ffffff;
+$hoverColor: gray;
+$clickedColor: #4caf50;
 .outer_shell {
   font-family: sans-serif;
   display: flex;
@@ -65,6 +68,32 @@
   select {
     padding: 0.3rem;
     margin-top: 0.2rem;
-  }
+  }}
+  .confirm-btn {
+  margin-top: 1rem 0;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+  background-color: $normalColor;
+  border: 2px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  
 }
+
+.confirm-btn:hover {
+  background-color: $hoverColor;
+}
+.confirm-btn:active {
+  background-color: $clickedColor;  
+  transform: scale(0.98);    
+}
+.confirm-btn:focus-visible {
+  outline: 3px solid lighten($clickedColor, 20%);
+  outline-offset: 2px;
+}
+
+
 

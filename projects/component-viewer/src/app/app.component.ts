@@ -69,6 +69,20 @@ export class AppComponent {
 
   selectedStartTime = '';
   selectedEndTime = '';
-
-
+confirmSelection() {
+  if (this.selectedDates.size === 0) {
+    alert('Please select a date.');
+    return;
+  }
+  if (!this.selectedStartTime || !this.selectedEndTime) {
+    alert('Please select start and end times.');
+    return;
+  }
+  const selectedDatesArray = Array.from(this.selectedDates).sort((a, b) => a - b);
+  alert(`You selected: ${selectedDatesArray.join(', ')}\nStart time: ${this.selectedStartTime}\nEnd time: ${this.selectedEndTime}`);
+  
+  console.log('Date:', selectedDatesArray);
+  console.log('Start Time:', this.selectedStartTime);
+  console.log('End Time:', this.selectedEndTime);
+}
 }
