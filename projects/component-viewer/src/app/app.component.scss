@@ -1,6 +1,5 @@
-$normalColor: #ffffff;
-$hoverColor: gray;
-$clickedColor: #4caf50;
+@use './app.color.component.scss' as theme;
+
 .outer_shell {
   font-family: sans-serif;
   display: flex;
@@ -75,7 +74,7 @@ $clickedColor: #4caf50;
   font-size: 1rem;
   color: black;
   font-weight: bold;
-  background-color: $normalColor;
+  background-color: theme.$normalColor;
   border: 2px solid black;
   border-radius: 6px;
   cursor: pointer;
@@ -84,14 +83,14 @@ $clickedColor: #4caf50;
 }
 
 .confirm-btn:hover {
-  background-color: $hoverColor;
+  background-color: theme.$hoverColor;
 }
 .confirm-btn:active {
-  background-color: $clickedColor;  
+  background-color: theme.$clickedColor;  
   transform: scale(0.98);    
 }
 .confirm-btn:focus-visible {
-  outline: 3px solid lighten($clickedColor, 20%);
+  outline: 3px solid lighten(theme.$clickedColor, 20%);
   outline-offset: 2px;
 }
 
