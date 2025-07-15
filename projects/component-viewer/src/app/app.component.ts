@@ -1,88 +1,13 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SmoltimeComponent } from 'smoltime';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SmoltimeComponent, FormsModule],
+  imports: [SmoltimeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'component-viewer';
-
-  currentYear = new Date().getFullYear();
-  currentMonth = new Date().getMonth();
-
-  dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
-  ];
-
-  get daysInMonth(): number[] {
-    const days = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
-    return Array.from({ length: days }, (_, i) => i + 1);
-  }
-
-  get blanks(): any[] {
-    const firstDay = new Date(this.currentYear, this.currentMonth, 1).getDay();
-    return Array(firstDay).fill(0);
-  }
-
-  nextMonth() {
-    if (this.currentMonth === 11) {
-      this.currentMonth = 0;
-      this.currentYear++;
-    } else {
-      this.currentMonth++;
-    }
-  }
-
-  prevMonth() {
-    if (this.currentMonth === 0) {
-      this.currentMonth = 11;
-      this.currentYear--;
-    } else {
-      this.currentMonth--;
-    }
-  }
-
-  selectedDates = new Set<number>();
-
-  toggleDateSelection(day: number) {
-    if (this.selectedDates.has(day)) {
-      this.selectedDates.delete(day);
-    } else {
-      this.selectedDates.add(day);
-    }
-  }
-
-  timeSlots = [
-  '08:00 AM', '09:00 AM', '10:00 AM',
-  '11:00 AM', '12:00 PM', '01:00 PM',
-  '02:00 PM', '03:00 PM', '04:00 PM',
-  '05:00 PM'
-  ];
-
-  selectedStartTime = '';
-  selectedEndTime = '';
-confirmSelection() {
-  if (this.selectedDates.size === 0) {
-    alert('Please select a date.');
-    return;
-  }
-  if (!this.selectedStartTime || !this.selectedEndTime) {
-    alert('Please select start and end times.');
-    return;
-  }
-  const selectedDatesArray = Array.from(this.selectedDates).sort((a, b) => a - b);
-  alert(`You selected: ${selectedDatesArray.join(', ')}\nStart time: ${this.selectedStartTime}\nEnd time: ${this.selectedEndTime}`);
-  
-  console.log('Date:', selectedDatesArray);
-  console.log('Start Time:', this.selectedStartTime);
-  console.log('End Time:', this.selectedEndTime);
-}
 }
