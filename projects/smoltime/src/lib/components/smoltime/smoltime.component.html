@@ -1,9 +1,95 @@
 <div class="smoltime-container">
+  <!-- Component header section -->
   <h2>{{ title }}</h2>
   <p>{{ description }}</p>
-</div>
-<div class="outer_shell">
   
-  <p style="padding: 1rem;">This is a rectangle container!</p>
+  <!-- Material Design Datepicker Field -->
+  <div class="datepicker-field">
+    <!-- Input container with floating label and button -->
+    <div class="input-container">
+      <!-- Main date input field -->
+      <input type="text" class="date-input" placeholder=" " id="datepicker1">
+      
+      <!-- Floating label that animates on focus -->
+      <label for="datepicker1" class="floating-label">Choose a date</label>
+      
+      <!-- Calendar trigger button -->
+      <button class="calendar-button" type="button" (click)="toggleCalendar()">
+        <div class="calendar-icon">
+          <div class="icon-header"></div>
+          <div class="icon-body">
+            <div class="icon-dot"></div>
+          </div>
+        </div>
+      </button>
+    </div>
+    
+    <!-- Format hint text below input -->
+    <div class="hint-text">MM/DD/YYYY</div>
+
+    <!-- Calendar popup -->
+    <div class="calendar-popup" *ngIf="showCalendar">
+      <!-- Calendar header -->
+      <div class="calendar-header">
+        <button class="nav-button">&lt;</button>
+        <div class="month-year">JUL 2025</div>
+        <button class="nav-button">&gt;</button>
+      </div>
+      
+      <!-- Calendar grid -->
+      <div class="calendar-grid">
+        <!-- Weekday headers -->
+        <div class="weekdays">
+          <div class="weekday">S</div>
+          <div class="weekday">M</div>
+          <div class="weekday">T</div>
+          <div class="weekday">W</div>
+          <div class="weekday">T</div>
+          <div class="weekday">F</div>
+          <div class="weekday">S</div>
+        </div>
+        
+        <!-- Month label -->
+        <div class="month-label">JUL</div>
+        
+        <!-- Date cells -->
+        <div class="dates-grid">
+          <div class="date-cell empty"></div>
+          <div class="date-cell empty"></div>
+          <div class="date-cell" (click)="closeCalendar()">1</div>
+          <div class="date-cell" (click)="closeCalendar()">2</div>
+          <div class="date-cell" (click)="closeCalendar()">3</div>
+          <div class="date-cell" (click)="closeCalendar()">4</div>
+          <div class="date-cell" (click)="closeCalendar()">5</div>
+          <div class="date-cell" (click)="closeCalendar()">6</div>
+          <div class="date-cell" (click)="closeCalendar()">7</div>
+          <div class="date-cell" (click)="closeCalendar()">8</div>
+          <div class="date-cell" (click)="closeCalendar()">9</div>
+          <div class="date-cell" (click)="closeCalendar()">10</div>
+          <div class="date-cell" (click)="closeCalendar()">11</div>
+          <div class="date-cell" (click)="closeCalendar()">12</div>
+          <div class="date-cell" (click)="closeCalendar()">13</div>
+          <div class="date-cell" (click)="closeCalendar()">14</div>
+          <div class="date-cell" (click)="closeCalendar()">15</div>
+          <div class="date-cell" (click)="closeCalendar()">16</div>
+          <div class="date-cell" (click)="closeCalendar()">17</div>
+          <div class="date-cell" (click)="closeCalendar()">18</div>
+          <div class="date-cell" (click)="closeCalendar()">19</div>
+          <div class="date-cell" (click)="closeCalendar()">20</div>
+          <div class="date-cell" (click)="closeCalendar()">21</div>
+          <div class="date-cell" (click)="closeCalendar()">22</div>
+          <div class="date-cell" (click)="closeCalendar()">23</div>
+          <div class="date-cell" (click)="closeCalendar()">24</div>
+          <div class="date-cell" (click)="closeCalendar()">25</div>
+          <div class="date-cell" (click)="closeCalendar()">26</div>
+          <div class="date-cell" (click)="closeCalendar()">27</div>
+          <div class="date-cell" (click)="closeCalendar()">28</div>
+          <div class="date-cell" (click)="closeCalendar()">29</div>
+          <div class="date-cell" (click)="closeCalendar()">30</div>
+          <div class="date-cell" (click)="closeCalendar()">31</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div style="width: 100px; height: 100px; background-color: red;">Test</div>
+          
