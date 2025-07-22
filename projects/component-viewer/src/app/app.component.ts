@@ -10,4 +10,10 @@ import { SmoltimeComponent } from 'smoltime';
 })
 export class AppComponent {
   title = 'component-viewer';
+
+  selectedDateFromSmoltime = '';
+
+  onDateSelected(date: string) {
+    this.selectedDateFromSmoltime = date;
+  }
 }

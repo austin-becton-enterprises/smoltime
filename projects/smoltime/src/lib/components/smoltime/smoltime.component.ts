@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,17 +11,23 @@ import { CommonModule } from '@angular/common';
 export class SmoltimeComponent {
   @Input() title = 'Smoltime Component';
   @Input() description = 'A simple time management component';
+  @Output() smoltimeOutput: EventEmitter<string> = new EventEmitter<string>()
 
   // Calendar popup visibility state
   showCalendar = false;
-
+  selectedDate: string = '';
   // Toggle calendar popup
   toggleCalendar() {
     this.showCalendar = !this.showCalendar;
   }
 
   // Close calendar popup
-  closeCalendar() {
-    this.showCalendar = false;
+  closeCalendar(date: string) {
+  this.showCalendar = false;
+  this.selectedDate = date;
+  if (this.selectedDate) {
+    this.smoltimeOutput.emit(this.selectedDate);
+  }
+
   }
 }

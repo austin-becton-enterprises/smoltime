@@ -1,1 +1,10 @@
-<smoltime></smoltime>
+<h1>Demo App</h1>
+
+<lib-smoltime 
+  [title]="'Pick a Date'" 
+  [description]="'Choose a date below:'"
+  (smoltimeOutput)="onDateSelected($event)">
+</lib-smoltime>
+
+<!-- Just the date, no text -->
+<p *ngIf="selectedDateFromSmoltime">{{ selectedDateFromSmoltime }}</p>
