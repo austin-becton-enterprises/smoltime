@@ -9,7 +9,6 @@
     <div class="input-container">
       <!-- Main date input field -->
       <input type="text" class="date-input" placeholder=" " id="datepicker1">
-      
       <!-- Floating label that animates on focus -->
       <label for="datepicker1" class="floating-label">Choose a date</label>
       
@@ -23,7 +22,15 @@
         </div>
       </button>
     </div>
-    
+
+
+  <mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
     <!-- Format hint text below input -->
     <div class="hint-text">MM/DD/YYYY</div>
 
@@ -50,7 +57,7 @@
         </div>
         
         <!-- Month label -->
-        <div class="month-label">JUL</div>
+        <div class="month-label">July</div>
         
         <!-- Date cells -->
         <div class="dates-grid">

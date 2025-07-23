@@ -1,10 +1,25 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core'; // required for datepicker to work
 
 @Component({
   selector: 'lib-smoltime',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule
+  ],
   templateUrl: './smoltime.component.html',
   styleUrls: ['./smoltime.component.scss']
 })
@@ -12,6 +27,10 @@ export class SmoltimeComponent {
   @Input() title = 'Smoltime Component';
   @Input() description = 'A simple time management component';
 
+  // Preselected date    Note: 0 = January, 1 = February, ..., 11 = December
+  selectedDate: Date = new Date(2077, 0, 23); // July is month 6 (zero-based)
+
+  
   // Calendar popup visibility state
   showCalendar = false;
 
@@ -24,4 +43,7 @@ export class SmoltimeComponent {
   closeCalendar() {
     this.showCalendar = false;
   }
+
+  
+
 }
