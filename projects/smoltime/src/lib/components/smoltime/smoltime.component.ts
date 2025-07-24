@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -26,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core'; // required for da
 export class SmoltimeComponent {
   @Input() title = 'Smoltime Component';
   @Input() description = 'A simple time management component';
+  @Output() smoltimeOutput: EventEmitter<string> = new EventEmitter<string>()
 
   // Preselected date    Note: 0 = January, 1 = February, ..., 11 = December
   selectedDate: Date = new Date(2077, 0, 23); // July is month 6 (zero-based)
@@ -33,17 +34,25 @@ export class SmoltimeComponent {
   
   // Calendar popup visibility state
   showCalendar = false;
-
+  selectedDate: string = '';
   // Toggle calendar popup
   toggleCalendar() {
     this.showCalendar = !this.showCalendar;
   }
 
   // Close calendar popup
-  closeCalendar() {
-    this.showCalendar = false;
+  closeCalendar(date: string) {
+  this.showCalendar = false;
+  this.selectedDate = date;
+  if (this.selectedDate) {
+    this.smoltimeOutput.emit(this.selectedDate);
   }
 
+<<<<<<< HEAD
   
 
 }
+=======
+  }
+}
+>>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646

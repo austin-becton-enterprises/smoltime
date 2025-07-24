@@ -1,18 +1,30 @@
 {
+<<<<<<< HEAD
   "hash": "0d506706",
   "configHash": "398ff685",
   "lockfileHash": "be58a221",
   "browserHash": "a35c0993",
+=======
+  "hash": "c0282efd",
+  "configHash": "28acd282",
+  "lockfileHash": "ee83cbd3",
+  "browserHash": "f957a3e9",
+>>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
+<<<<<<< HEAD
       "fileHash": "70c27c00",
+=======
+      "fileHash": "c6367382",
+>>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
+<<<<<<< HEAD
       "fileHash": "06780df8",
       "needsInterop": false
     },
@@ -50,12 +62,19 @@
       "src": "../../../../../node_modules/@angular/material/fesm2022/input.mjs",
       "file": "@angular_material_input.js",
       "fileHash": "34f843af",
+=======
+      "fileHash": "42f929d5",
+>>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
+<<<<<<< HEAD
       "fileHash": "0e0c7751",
+=======
+      "fileHash": "3ed05e6c",
+>>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646
       "needsInterop": false
     }
   },
