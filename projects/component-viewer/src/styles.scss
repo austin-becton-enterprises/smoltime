@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+  height: 100%;
+  overflow: auto;
+  position: static; 
+}
 .smoltime {
   padding: 1rem;
   border: 1px solid #ccc;
