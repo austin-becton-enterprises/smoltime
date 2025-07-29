@@ -1,0 +1,32 @@
+import {
+  MAT_INPUT_VALUE_ACCESSOR,
+  MatInput,
+  MatInputModule,
+  getMatInputUnsupportedTypeError
+} from "./chunk-YK6JKF2Z.js";
+import "./chunk-GSABFUCE.js";
+import {
+  MatError,
+  MatFormField,
+  MatHint,
+  MatLabel,
+  MatPrefix,
+  MatSuffix
+} from "./chunk-6U5J4M7X.js";
+import "./chunk-EULT3SWI.js";
+import "./chunk-ZMS7YDRI.js";
+import "./chunk-VMBWIMK3.js";
+import "./chunk-QUXVKVVN.js";
+export {
+  MAT_INPUT_VALUE_ACCESSOR,
+  MatError,
+  MatFormField,
+  MatHint,
+  MatInput,
+  MatInputModule,
+  MatLabel,
+  MatPrefix,
+  MatSuffix,
+  getMatInputUnsupportedTypeError
+};
+//# sourceMappingURL=@angular_material_input.js.map
