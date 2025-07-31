@@ -28,31 +28,40 @@ export class SmoltimeComponent {
   @Input() description = 'A simple time management component';
   @Output() smoltimeOutput: EventEmitter<string> = new EventEmitter<string>()
 
-  // Preselected date    Note: 0 = January, 1 = February, ..., 11 = December
-  selectedDate: Date = new Date(2077, 0, 23); // July is month 6 (zero-based)
+  // Preselected date (zero-based)   Note: 0 = January, 1 = February, ..., 11 = December
+  selectedDate: Date = new Date(2036, 6, 12);
+
+
+    // Function to change the selectedDate every 5 seconds
+  // private originalDate: Date = new Date(2077, 0, 23);
+  // private altDate: Date = new Date(2077, 6, 14); // July 14, 2077
+  // private toggled = false;
+
+  // ngOnInit(): void {
+  //   setInterval(() => {
+  //     this.selectedDate = this.toggled ? this.originalDate : this.altDate;
+  //     this.toggled = !this.toggled;
+  //   }, 5000); // every 5 seconds
+  // }
 
   
   // Calendar popup visibility state
   showCalendar = false;
-  selectedDate: string = '';
   // Toggle calendar popup
   toggleCalendar() {
     this.showCalendar = !this.showCalendar;
   }
 
   // Close calendar popup
-  closeCalendar(date: string) {
+closeCalendar(date: string) {
   this.showCalendar = false;
-  this.selectedDate = date;
-  if (this.selectedDate) {
-    this.smoltimeOutput.emit(this.selectedDate);
-  }
 
-<<<<<<< HEAD
-  
+  // Use the current year and month to build a new Date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth(); // Zero-based (0 = Jan)
 
+  this.selectedDate = new Date(year, month, Number(date));
+  this.smoltimeOutput.emit(this.selectedDate.toISOString());
 }
-=======
-  }
 }
->>>>>>> d0f64787e3a3d193e57df4046f04685ab4f4c646
