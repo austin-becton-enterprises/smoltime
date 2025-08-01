@@ -1,1 +1,1 @@
-export * from './lib/smoltime.module';
+export * from './lib/components/smoltime/smoltime.component';

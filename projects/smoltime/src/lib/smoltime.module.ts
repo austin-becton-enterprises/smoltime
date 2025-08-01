@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
+import { SmoltimeComponent } from './components/smoltime/smoltime.component';
 
 @NgModule({
-  declarations: [],
-  imports: [],
-  exports: []
+  imports: [
+    SmoltimeComponent
+  ],
+  exports: [
+    SmoltimeComponent
+  ]
 })
 export class SmoltimeModule { }
